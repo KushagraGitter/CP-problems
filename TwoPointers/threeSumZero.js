@@ -3,7 +3,6 @@ function findTriplets(arr, n) {
   let returnArr = [];
   // sort array elements
   arr.sort((a, b) => a - b);
-  arr = [...new Set(arr)];
   for (let i = 0; i < n - 1; i++) {
     // initialize left and right
     let l = i + 1;
@@ -27,7 +26,25 @@ function findTriplets(arr, n) {
   }
 
   if (found == false) return -1;
-  else return returnArr;
+  let one = -9,
+    two = -9,
+    three = -9;
+  returnArr = returnArr.filter((a, i, aa) => {
+    debugger;
+    if (
+      i + 1 < aa.length &&
+      a[0] === aa[i + 1][0] &&
+      a[1] === aa[i + 1][1] &&
+      a[2] === aa[i + 1][2]
+    ) {
+      one = a[0];
+      two = a[1];
+      three = a[2];
+      return false;
+    }
+    return true;
+  });
+  return returnArr;
 }
 
 // Driven source
