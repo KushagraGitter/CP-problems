@@ -14,9 +14,9 @@ function partitionLabels(s) {
   for (let j = 0; j < s.length; j++) {
     end = Math.max(end, last_idx[s[j].charCodeAt(0) - 'a'.charCodeAt(0)]);
 
-    if (i === end) {
+    if (j === end) {
       result.push(j - start + 1);
-      start = i + 1;
+      start = j + 1;
     }
   }
 
@@ -26,3 +26,4 @@ function partitionLabels(s) {
 //driver code
 
 console.log(partitionLabels('ababcbacadefegdehijhklij'));
+console.log(partitionLabels('eccbbbbdec'));
