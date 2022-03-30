@@ -37,13 +37,6 @@ var searchRange = function (nums, target) {
     while (rigth + 1 < A.length && A[rigth + 1] === B) {
       rigth++;
     }
-    // for(let i = idx; i - 1 >= 0 && A[i - 1] === B; i--){
-    //     left = i
-    // }
-    // for(let j = idx; j + 1 < A.length && A[j + 1] === B; j++) {
-    //     rigth = j
-    // }
-
     return [left, rigth];
   }
 };
