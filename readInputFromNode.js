@@ -1,5 +1,3 @@
-'use strict';
-
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -26,53 +24,42 @@ function readline() {
 }
 
 function main() {
-  const x = readline();
+  const firstLine = readline();
+  const [n, m] = firstLine.split(' ');
+  let weightArray = [];
 
-  for (let i = 0; i < x; i++) {
-    let line2 = readline();
-    doorKeys(line2);
+  for (let i = 0; i < parseInt(m); i++) {
+    weightArray.push(readline());
   }
 }
 
-function doorKeys(word) {
-  let len = word.length;
-  let kyes = [];
+function findMaxStability(n, m, weightArray) {
+  let min = 1;
+  let max = m;
 
-  for (let j = 0; j < len; j++) {
-    let asciValue = word[j].charCodeAt(0);
-
-    if (asciValue >= 97 && asciValue <= 122) {
-      kyes.push(word[j]);
+  const maxStability =
+    Math.abs(min - max) * weightArray[0].weightArray[weightArray.length - 1];
+  min = 1;
+  max = maxStability;
+  let mid = 0;
+  while (max - min > 0) {
+    mid = Math.floor((min + max) / 2);
+    if (checkIfArangmentPossible(mid)) {
+      min = mid;
     } else {
-      if (!kyes.includes(word[j].toLowerCase())) {
-        console.log(false);
-        return;
-      }
+      max = mid;
     }
   }
-  console.log(true);
+
+  console.log(mid);
+
+  function checkIfArangmentPossible(distance) {
+    let orbit = 1;
+    let planet = 1;
+    while (orbit < n && planet < m) {
+      orbit = orbit + distance;
+      planet++;
+    }
+    return orbit < n ? true : false;
+  }
 }
-
-/*
-// Sample code to perform I/O:
-
-process.stdin.resume();
-process.stdin.setEncoding("utf-8");
-var stdin_input = "";
-
-process.stdin.on("data", function (input) {
-    stdin_input += input;                               // Reading input from STDIN
-});
-
-process.stdin.on("end", function () {
-   main(stdin_input);
-});
-
-function main(input) {
-    process.stdout.write("Hi, " + input + ".\n");       // Writing output to STDOUT
-}
-
-// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
-*/
-
-// Write your code here
