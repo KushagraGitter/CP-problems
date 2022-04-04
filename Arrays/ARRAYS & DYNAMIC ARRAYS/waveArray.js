@@ -20,7 +20,8 @@ function waveArray(A) {
       }
       leftLargeCheck = true;
     }
+    
   }
   return A;
-  
+
 }
