@@ -7,7 +7,7 @@ module.exports = {
       this.heap = new Array();
       this.size = 0;
     }
-
+    //min heap with index
     minHeap.prototype.insert = function insert(n, i) {
       let size = 0;
       let point = {
