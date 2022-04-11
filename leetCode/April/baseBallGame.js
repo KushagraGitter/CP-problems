@@ -21,7 +21,6 @@ var calPoints = function (ops) {
   }
 
   let initalSum = 0;
-
   let sum = arr.reduce((a, b) => a + b, initalSum);
   return sum;
 };
