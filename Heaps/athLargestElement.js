@@ -1,6 +1,6 @@
 module.exports = {
-  //param A : array of integers
-  //param B : integer
+  //param A : integer
+  //param B : array of integers
   //return a array of integers
   solve: function (A, B) {
     function minHeap() {
@@ -65,25 +65,28 @@ module.exports = {
       return min;
     };
 
-    let minHeapObj = new minHeap();
-    let replaceIndex = 0;
-    for (let i = 0; i <= B; i++) {
-      minHeapObj.insert(A[i]);
+    minHeap.prototype.top = function top() {
+      return this.heap[0];
+    };
+
+    let minHeapOBJ = new minHeap();
+
+    for (let i = 0; i < B.length; i++) {
+      if (minHeapOBJ.size < A) {
+        minHeapOBJ.insert(B[i]);
+      } else {
+        if (minHeapOBJ.top() < B[i]) {
+          minHeapOBJ.extractMin();
+          minHeapOBJ.insert(B[i]);
+        }
+      }
+      if (i < A - 1) {
+        B[i] = -1;
+      } else {
+        B[i] = minHeapOBJ.top();
+      }
     }
 
-    for (let j = B + 1; j < A.length; j++) {
-      const min = minHeapObj.extractMin();
-      minHeapObj.insert(A[j]);
-      A[replaceIndex] = min;
-      replaceIndex++;
-    }
-
-    for (let k = 0; k <= B; k++) {
-      const min = minHeapObj.extractMin();
-      A[replaceIndex] = min;
-      replaceIndex++;
-    }
-
-    return A;
+    return B;
   },
 };
