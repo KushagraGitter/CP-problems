@@ -16,6 +16,7 @@ module.exports = {
           head = new Node(data);
           tail = head;
       }
+      
 
       function deleteAndAddNode(node) {
           if(node.previous !== null && node.next !== null) {
