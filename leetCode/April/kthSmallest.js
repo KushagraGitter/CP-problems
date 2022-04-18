@@ -11,20 +11,20 @@
  * @param {number} k
  * @return {number}
  */
- var kthSmallest = function(root, k) {
+var kthSmallest = function (root, k) {
   let kthSmallest = 0;
   function inOrder(root) {
-      if(root === null) {
-          return root;
-      }
-      
-      inOrder(root.left);
-      k--;
-      if(k === 0) {
-          kthSmallest = root.val;
-      }
-      inOrder(root.right)
+    if (root === null) {
+      return root;
+    }
+
+    inOrder(root.left);
+    k--;
+    if (k === 0) {
+      kthSmallest = root.val;
+    }
+    inOrder(root.right);
   }
-  inOrder(root)
+  inOrder(root);
   return kthSmallest;
 };
