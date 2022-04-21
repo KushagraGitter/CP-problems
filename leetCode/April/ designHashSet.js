@@ -1,3 +1,7 @@
+/**
+ * @param {number} key
+ * @return {void}
+ */
 function Node(key) {
   this.key = key;
   this.next = null;
