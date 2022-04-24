@@ -17,6 +17,5 @@ var jump = function (nums) {
     r = farthest;
     res++;
   }
-
   return res;
 };
