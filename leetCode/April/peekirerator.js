@@ -44,7 +44,6 @@ PeekingIterator.prototype.next = function () {
 PeekingIterator.prototype.hasNext = function () {
   return this.stack.length !== 0;
 };
-
 /**
  * Your PeekingIterator object will be instantiated and called as such:
  * var obj = new PeekingIterator(arr)
