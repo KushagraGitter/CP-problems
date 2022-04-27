@@ -1,6 +1,8 @@
 module.exports = {
   //param A : integer
   //return a array of array of integers
+  //. for diagonal left to right the sum will be same, i + j will be constant for the diagonal
+  // for diagonal right to left the diffrence will be constant
   solveNQueens: function (A) {
     let vigRow = new Array(A).fill(0);
     let vigCol = new Array(A).fill(0);
