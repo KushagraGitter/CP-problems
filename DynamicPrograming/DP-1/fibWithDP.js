@@ -29,22 +29,22 @@ function readline() {
 
 function main() {
   const firstLine = readline();
-  fibDP(parseInt(firstLine));  
+  fibDP(parseInt(firstLine));
 }
- 
-function fibDP (A) {
-    let dp = new Array(A + 1).fill(-1);
-    dp[0] = 0;
-    dp[1] = 1;
-    function fib(n) {
-        if(n <= 1) {
-            return dp[n];
-        }
-        if(dp[n] === -1) {
-            dp[n] = fib(n - 1) + fib(n - 2);
-        }
-        return dp[n];
+
+function fibDP(A) {
+  let dp = new Array(A + 1).fill(-1);
+  dp[0] = 0;
+  dp[1] = 1;
+  function fib(n) {
+    if (n <= 1) {
+      return dp[n];
     }
-    fib(A);
-    console.log(dp[A]);
+    if (dp[n] === -1) {
+      dp[n] = fib(n - 1) + fib(n - 2);
+    }
+    return dp[n];
+  }
+  fib(A);
+  console.log(dp[A]);
 }
