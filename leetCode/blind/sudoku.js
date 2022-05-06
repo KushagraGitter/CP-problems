@@ -66,5 +66,4 @@ var solveSudoku = function (A) {
   }
 
   sudokuSolver(0);
-  //A = A.map((item) => item.join(""))
 };
