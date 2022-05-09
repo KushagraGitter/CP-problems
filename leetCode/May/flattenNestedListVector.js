@@ -61,7 +61,6 @@ class NestedIterator {
 
     return this.head !== null;
   }
-
   next() {
     const next = this.head;
     this.head = null;
