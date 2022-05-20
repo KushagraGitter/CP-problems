@@ -30,6 +30,5 @@ function ZAlgo(str) {
     }
     return zArray;
 }
-
 //to execute call function ZAlgo('aabcaabcdaabcaabca')
 
