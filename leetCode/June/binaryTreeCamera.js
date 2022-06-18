@@ -39,3 +39,18 @@ var minCameraCover = function (root) {
   return ans;
 };
 
+//driver code
+function TreeNode(val, left, right) {
+  this.val = val === undefined ? 0 : val;
+  this.left = left === undefined ? null : left;
+  this.right = right === undefined ? null : right;
+}
+
+let root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.rigth = new TreeNode(3);
+root.left.left = new TreeNode(4);
+root.left.rigth = new TreeNode(5);
+root.left.left.left = new TreeNode(6);
+
+minCameraCover(root);
