@@ -1,10 +1,10 @@
-https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
+//leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
 /**
  * @param {number[]} cardPoints
  * @param {number} k
  * @return {number}
  */
-var maxScore = function (cardPoints, k) {
+https: var maxScore = function (cardPoints, k) {
   let dp = new Array(k + 1).fill(0);
 
   for (let i = cardPoints.length - 1; i >= cardPoints.length - k; i--) {
