@@ -1,4 +1,4 @@
-//obeservationn is to maintain a recuerssion stac
+//obeservationn is to maintain a recuerssion stack
 module.exports = {
   //param A : integer
   //param B : array of array of integers
