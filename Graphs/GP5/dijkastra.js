@@ -16,7 +16,6 @@ module.exports = {
       adjMat[itr[0]][itr[1]] = itr[2];
       adjMat[itr[1]][itr[0]] = itr[2];
     }
-
     function minHeap() {
       this.heap = new Array();
       this.size = 0;
