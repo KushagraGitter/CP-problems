@@ -12,6 +12,5 @@ var minMoves2 = function (nums) {
   for (let i = 0; i < nums.length; i++) {
     operations = operations + Math.abs(nums[i] - nums[mid]);
   }
-
   return operations;
 };
