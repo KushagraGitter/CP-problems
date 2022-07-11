@@ -1,4 +1,4 @@
-/
+//https://leetcode.com/problems/binary-tree-right-side-view/
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -11,21 +11,21 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
- var rightSideView = function(root) {
-  let result = [];
-  
+var rightSideView = function (root) {
+  let result = []
+
   function dfs(root, depth) {
-      if(root === null) {
-          return
-      }
-      
-      if(result.length < depth) {
-          result.push(root.val);
-      }
-      
-      dfs(root.right, depth + 1 );
-      dfs(root.left, depth + 1 )
+    if (root === null) {
+      return
+    }
+
+    if (result.length < depth) {
+      result.push(root.val)
+    }
+
+    dfs(root.right, depth + 1)
+    dfs(root.left, depth + 1)
   }
   dfs(root, 1)
-  return result;
-};
+  return result
+}
