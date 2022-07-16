@@ -1,0 +1,67 @@
+module.exports = {
+  //param A : integer
+  //param B : array of array of integers
+  //return an integer
+  solve: function (A, B) {
+    let colorArr = new Array(A + 1).fill(0)
+    let adjMat = new Map()
+    let q = []
+    let a = 0,
+      b = 0
+    const mod = Math.pow(10, 9) + 7
+    //adjecency matrix
+    for (let i = 0; i < B.length; i++) {
+      const [u, v] = B[i]
+      if (adjMat.has(u)) {
+        adjMat.get(u).push(v)
+      } else {
+        adjMat.set(u, [])
+        adjMat.get(u).push(v)
+      }
+      if (adjMat.has(v)) {
+        adjMat.get(v).push(u)
+      } else {
+        adjMat.set(v, [])
+        adjMat.get(v).push(u)
+      }
+    }
+
+    for (const [key, value] of adjMat) {
+      if (colorArr[key] === 0) {
+        q.push(key)
+        colorArr[key] = 1
+
+        while (q.length > 0) {
+          const node = q.shift()
+          const newCol = colorArr[node] === 1 ? 2 : 1
+          const newNodes = adjMat.get(node)
+          if (newNodes !== undefined) {
+            for (let j = 0; j < newNodes.length; j++) {
+              if (colorArr[newNodes[j]] == 0) {
+                q.push(newNodes[j])
+                colorArr[newNodes[j]] = newCol
+              }
+              // } else {
+              //     if(colorArr[node] == colorArr[newNodes[j]]) {
+              //         return 0
+              //     }
+              // }
+            }
+          }
+        }
+      }
+    }
+
+    //check for color a:0, b:1 count for nodes for each color;
+
+    for (let i = 1; i < colorArr.length; i++) {
+      if (colorArr[i] === 1) {
+        a++
+      } else {
+        b++
+      }
+    }
+
+    return ((a * b) % mod) - (A - 1)
+  },
+}
