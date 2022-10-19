@@ -41,7 +41,7 @@ minHeap.prototype.extractMin = function extractMin() {
             this.heap[i*2 + 1] = this.heap[i];
             this.heap[i] = temp;
 
-            i = i*2 + 1;
+                        i = i*2 + 1;
         } else {
             if(this.heap[i*2 + 2]) {
               let temp = this.heap[i*2 + 2];
@@ -49,9 +49,6 @@ minHeap.prototype.extractMin = function extractMin() {
                 this.heap[i] = temp;
                  i = i*2 + 2;  
             }
-            
-
-           
         }
     }
 
