@@ -9,3 +9,4 @@ export function debounce(fn, wait) {
     }, wait);
   };
 }
+
