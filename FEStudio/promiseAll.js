@@ -7,6 +7,7 @@ Promise.all = (promises) => {
             try{
                 let res = await promise
                 responses.push(res)
+                debugger;
                 if(i === promises.length - 1) {
                     if(erros.length > 0) {
                         reject(erros)
@@ -22,3 +23,18 @@ Promise.all = (promises) => {
         })
     })
 }
+
+// driver logic
+function getData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("data")
+        }, 100)
+    })
+}
+
+let p1 = getData()
+let p2 = getData()
+let p3 = getData();
+
+console.log(Promise.all([p1, p2, p3]))
