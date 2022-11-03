@@ -6,4 +6,5 @@ uncommited changes
 uncommited Change 2
 Changes
 changes
+NEW CHANGES
 # CP-problems
