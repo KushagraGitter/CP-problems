@@ -7,5 +7,8 @@ uncommited Change 2
 Changes
 changes
 NEW CHANGES
-New Changes 
+New Changes
+new change
+changes
+new Changes
 # CP-problems

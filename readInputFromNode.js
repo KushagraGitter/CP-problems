@@ -62,4 +62,5 @@ function findMaxStability(n, m, weightArray) {
     }
     return orbit < n ? true : false;
   }
+    return ""
 }
