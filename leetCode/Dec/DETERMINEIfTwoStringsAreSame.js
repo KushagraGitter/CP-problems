@@ -26,3 +26,5 @@ var closeStrings = function(word1, word2) {
     const str2 = freq2.filter(x => x).sort().join()
     return str1 === str2;
 };
+
+//
