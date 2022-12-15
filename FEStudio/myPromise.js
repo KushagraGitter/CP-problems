@@ -12,6 +12,7 @@ class MyPromise {
                 this.onFulFilledCallback.map((fn) => fn(value))
             }
         }
+        //test
 
         const reject = value => {
             if(this.status === 'pending') {

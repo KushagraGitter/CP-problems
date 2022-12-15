@@ -5,10 +5,10 @@
 //      this.right = null
 //    }
 
-module.exports = { 
+
     //param A : root node of tree
     //return a array of integers
-       solve : function(A){
+       function leftView(A){
            let returnArray  = [];
            let Q = [];
            // check if tree  root is null return null
@@ -16,7 +16,7 @@ module.exports = {
    
            //add root node to the Q
            Q.push(A);
-   
+            debugger;
            while(Q.length > 0) {
                let tempArr = [];
                let CSize  = Q.length;
@@ -31,12 +31,28 @@ module.exports = {
                    if(right !== null) {
                        Q.push(right)
                    }
-                   
+                 debugger;  
                }
                returnArray.push(tempArr[0]);
            }
    
            return returnArray;
        }
-   };
+
+
+   class Node {
+    constructor(val) {
+        this.data = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+var root = new Node(10);
+root.left = new Node(8);
+root.right = new Node(2);
+root.left.left = new Node(3);
+root.left.right = new Node(5);
+root.right.left = new Node(2);
    
+console.log(leftView(root))
