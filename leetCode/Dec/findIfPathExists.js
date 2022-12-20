@@ -1,10 +1,10 @@
 //https://leetcode.com/problems/find-if-path-exists-in-graph/description/
 /**
+ * @return {boolean}
  * @param {number} n
  * @param {number[][]} edges
  * @param {number} source
  * @param {number} destination
- * @return {boolean}
  */
 var validPath = function(n, edges, source, destination) {
     let adjList = new Map();
@@ -53,3 +53,6 @@ var validPath = function(n, edges, source, destination) {
 
     return false;
 };
+
+// driver
+validPath(6, [[0,1],[0,2],[3,5],[5,4],[4,3]], 3, 5)
