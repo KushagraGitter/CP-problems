@@ -1,3 +1,4 @@
+// debouce function to add controll the flow of the request of the network calls 
 export function debounce(fn, wait) {
   let timer;
   return function () {
@@ -9,4 +10,6 @@ export function debounce(fn, wait) {
     }, wait);
   };
 }
+
+
 
