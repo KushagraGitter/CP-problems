@@ -7,6 +7,7 @@
  * @return {number}
  */
 //https://leetcode.com/problems/jump-game-ii/description/
+//UPDATED COMMENT
 var jump = function(nums) {
     let l = 0, r = 0;
     let res = 0;
