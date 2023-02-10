@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/naming-a-company/description/
+//update
 class Solution {
     public long distinctNames(String[] ideas) {
         Set<String> set = new HashSet<>();
