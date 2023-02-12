@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/shortest-path-with-alternating-colors/description/
+//update
 class Solution {
       public int[] shortestAlternatingPaths(int n, int[][] red_edges, int[][] blue_edges) {
         // Two sets one for blu and another for red
