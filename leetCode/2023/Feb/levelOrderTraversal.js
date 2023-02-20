@@ -11,7 +11,7 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-vvar zigzagLevelOrder = (root) => {
+var zigzagLevelOrder = (root) => {
     if (!root) {
         return [];
     }
