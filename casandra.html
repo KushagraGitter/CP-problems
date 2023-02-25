@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cassandra Ring Graph</title>
+    <style>
+        #cassandra-graph {
+            width: 1000px;
+            height: 600px;
+            border: 1px solid #e4e4e4;
+        }
+    </style>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+    <div id="cassandra-graph"></div>
+    <script>
+        // Define the cluster size and replication factor
+        const clusterSize = 10
+        
+        
+           
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ;
+        const replicationFactor = 3;
+
+        // Calculate the hash range and node position for each node in the cluster
+        const nodes = Array.from({ length: clusterSize }, (_, i) => {
+            const hashStart = BigInt(i) * BigInt(2 ** 64 / clusterSize);
+            const hashEnd = (BigInt(i) + BigInt(1)) * BigInt(2 ** 64 / clusterSize) - BigInt(1);
+            const position = { x: 500 + 300 * Math.cos(2 * Math.PI * i / clusterSize), y: 300 + 300 * Math.sin(2 * Math.PI * i / clusterSize) };
+            return { id: i, label: `Node ${i}\n[${hashStart.toString()} - ${hashEnd.toString()}]`, x: position.x, y: position.y };
+        });
+
+        // Calculate the edges between nodes
+        const edges = nodes.flatMap((sourceNode) => {
+            const replicaNodes = Array.from({ length: replicationFactor }, (_, i) => nodes[(sourceNode.id + i) % clusterSize]);
+            return replicaNodes.map((targetNode) => ({ from: sourceNode.id, to: targetNode.id }));
+        });
+
+        // Create a new network visualization
+        const container = document.getElementById("cassandra-graph");
+        const data = { nodes: nodes, edges: edges };
+        const options = {
+            layout: {
+                hierarchical: {
+                    enabled: false,
+                    direction: "UD",
+                    sortMethod: "directed",
+                    levelSeparation: 150,
+                    nodeSpacing: 100,
+                    treeSpacing: 200
+                }
+            },
+            physics: {
+                enabled: true,
+                repulsion: {
+                    centralGravity: 0.0,
+                    springLength: 150,
+                    springConstant: 0.1,
+                    nodeDistance: 100,
+                    damping: 0.9
+                },
+                stabilization: {
+                    iterations: 2000,
+                    updateInterval: 50
+                }
+            }
+        };
+        const network = new vis.Network(container, data, options);
+    </script>
+</body>
+</html>
