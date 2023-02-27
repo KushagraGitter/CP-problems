@@ -3,6 +3,7 @@
  * @param {string} word2
  * @return {number}
  */
+//update
 var minDistance = function(str1, str2) {
     let dp = new Array(str1.length + 1).fill(0);
 
