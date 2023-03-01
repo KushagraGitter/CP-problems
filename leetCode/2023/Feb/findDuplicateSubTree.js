@@ -6,6 +6,7 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
+//updated comment
 /**
  * @param {TreeNode} root
  * @return {TreeNode[]}
