@@ -3,6 +3,7 @@
  * @return {number[]}
  */
 //https://leetcode.com/problems/sort-an-array/description/
+//update
 var sortArray = function(nums) {
     function merge(arr1, arr2) {
         let result = [];
