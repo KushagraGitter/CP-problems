@@ -3,7 +3,7 @@
 //      this.data = data
 //      this.next = null
 //    }
-
+//update
 module.exports = {
   //param A : head node of linked list
   //return the head node in the linked list

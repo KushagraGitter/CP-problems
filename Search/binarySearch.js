@@ -1,3 +1,4 @@
+//updated
 function binarySearch(start, end, B) {
   if (start >= end) {
     return end + 1;
