@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/binary-search/description/
+//update
 impl Solution {
     fn binSearch(mut start: i32, mut end: i32, nums: Vec<i32>, target: i32) -> i32 {
         if start > end {
