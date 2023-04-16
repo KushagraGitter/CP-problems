@@ -3,6 +3,7 @@
  * @param {number} k
  * @return {number}
  */
+//update
  //https://leetcode.com/problems/maximum-value-of-k-coins-from-piles/description/
 var maxValueOfCoins = function(piles, k) {
     // Initialize a 2D array dp with dimensions (n+1) x (k+1) to store the maximum value of coins
