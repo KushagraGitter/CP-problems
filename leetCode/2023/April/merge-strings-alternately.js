@@ -4,6 +4,7 @@
  * @return {string}
  */
 //https://leetcode.com/problems/merge-strings-alternately/description/
+//upfate
 var mergeAlternately = function(word1, word2) {
     let p1 = 0;
     let p2 = 0;
