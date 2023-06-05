@@ -22,3 +22,26 @@ var numRescueBoats = function(people, limit) {
 
     return count
 };
+
+// below is rust conversion 
+
+// fn num_rescue_boats(people: Vec<usize>, limit: usize) -> usize{
+//     let mut start: usize = 0;
+//     let mut end: usize = people.len();
+//     let mut count:usize = 0;
+
+//     people.sort();
+
+//     while start <= end {
+//         if people[start] + people[end] > limit {
+//             end -= 1;
+//             start += 1;
+//         } else if people[start] + people[end] <= limit {
+//             start += 1;
+//             end  -= 1;
+//             count += 1;
+//         }
+//     }
+
+//     return count;
+// }
