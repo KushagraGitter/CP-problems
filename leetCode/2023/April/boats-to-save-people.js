@@ -25,23 +25,33 @@ var numRescueBoats = function(people, limit) {
 
 // below is rust conversion 
 
-// fn num_rescue_boats(people: Vec<usize>, limit: usize) -> usize{
-//     let mut start: usize = 0;
-//     let mut end: usize = people.len();
-//     let mut count:usize = 0;
+// impl Solution {
+//     pub fn num_rescue_boats(mut people: Vec<i32>, limit: i32) -> i32 {
 
-//     people.sort();
+//         people.sort();
+//         let mut iter = people.iter();
+//         let mut start = iter.next();
+//         let mut end = iter.next_back();
+//         let mut count = 0;
 
-//     while start <= end {
-//         if people[start] + people[end] > limit {
-//             end -= 1;
-//             start += 1;
-//         } else if people[start] + people[end] <= limit {
-//             start += 1;
-//             end  -= 1;
-//             count += 1;
+//         loop {
+//             match (start, end) {
+//                 (None, None) => break,
+//                 (None, Some(_)) | (Some(_), None) => {
+//                     count += 1;
+//                     break;
+//                 }
+//                 (Some(s), Some(b)) if (s + b) <= limit => {
+//                     count += 1;
+//                     start = iter.next();
+//                     end = iter.next_back();
+//                 }
+//                 (Some(_), Some(_)) => {
+//                     count += 1;
+//                     end = iter.next_back();
+//                 }
+//             }
 //         }
+//         return count; 
 //     }
-
-//     return count;
 // }
