@@ -1,0 +1,26 @@
+/**
+ * @param {number[]} groupSizes
+ * @return {number[][]}
+ */
+//https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/?envType=daily-question&envId=2023-09-11
+var groupThePeople = function(groupSizes) {
+    const res = [];
+    const groups = {};
+
+    for (let i = 0; i < groupSizes.length; i++) {
+        const size = groupSizes[i];
+
+        if (!groups[size]) {
+            groups[size] = [];
+        }
+
+        groups[size].push(i);
+
+        if (groups[size].length === size) {
+            res.push(groups[size]);
+            delete groups[size];
+        }
+    }
+
+    return res;    
+};
