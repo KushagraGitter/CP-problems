@@ -23,5 +23,5 @@ var candy = function(ratings) {
     }
     
     return sum;
-    update
+    updateupdate 2
 };
